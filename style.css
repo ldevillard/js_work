@@ -1,0 +1,27 @@
+h1
+{
+    color: darkturquoise;
+    font-family: "Lucida Console";
+    font-weight: bold;
+    font-size: xxx-large;
+}
+
+.p1
+{
+    color: white;
+    font-family: "Lucida Console";
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+body
+{
+    background-color: black;
+    text-align: center;
+}
+
+.vertical_center
+{
+    margin-top: 50vh;
+    transform: translateY(-50%);
+}
