@@ -22,4 +22,4 @@ const clock = setInterval(function time()
 
 
     console.log(hr, mn, s);
-}, 1000);
+}, 1);

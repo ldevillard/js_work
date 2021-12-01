@@ -21,11 +21,11 @@ h1
 {
     text-align: center;
     border-radius: 30px;
-    background-color:palevioletred;
+    background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
     padding: 20px;
     margin: 20px;
-    margin-left: 65vh;
-    margin-right: 65vh;
+    margin-left: 60vh;
+    margin-right: 60vh;
 }
 
 body
@@ -37,4 +37,10 @@ body
 {
     margin-top: 50vh;
     transform: translateY(-50%);
+}
+
+a
+{
+    color: white;
+    text-decoration: none;
 }
