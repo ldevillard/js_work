@@ -9,7 +9,7 @@ let mouse =
 {
     x: null,
     y: null,
-    radius: (canvas.height/80) * (canvas.width/80)
+    radius: (canvas.height/100) * (canvas.width/100)
 }
 
 window.addEventListener('mousemove', 
@@ -55,14 +55,14 @@ class Particle
         if (distance < mouse.radius + this.size)
         {
             if (mouse.x < this.x && this.x < canvas.width - this.size * 10)
-                this.x += 10;
+                this.x += 20;
             if (mouse.x > this.x && this.x > this.size * 10)
-                this.x -= 10;
+                this.x -= 20;
 
             if (mouse.y < this.y && this.y < canvas.height - this.size * 10)
-                this.y += 10;
+                this.y += 20;
             if (mouse.y > this.y && this.y > this.size * 10)
-                this.y -= 10;
+                this.y -= 20;
         }
 
         //Move particle
@@ -132,7 +132,7 @@ window.addEventListener('resize',
     {
         canvas.width = innerWidth;
         canvas.height = innerHeight;
-        mouse.radius = (canvas.height/80) * (canvas.width/80);
+        mouse.radius = (canvas.height/100) * (canvas.width/100);
         init();
     }
 )
