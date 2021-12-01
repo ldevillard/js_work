@@ -20,6 +20,14 @@ window.addEventListener('mousemove',
     }
 );
 
+window.addEventListener('touchmove',
+    function(event)
+    {
+        mouse.x = event.x;
+        mouse.y = event.y;
+    }
+)
+
 class Particle
 {
     constructor(x, y, directionX, directionY, size, color)
