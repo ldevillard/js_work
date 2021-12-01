@@ -4,7 +4,7 @@ const second = document.getElementById('second');
 
 const clock = setInterval(function time()
 {
-    let date = new Date();
+    const date = new Date();
     let hr = date.getHours();
     let mn = date.getMinutes();
     let s = date.getSeconds();
