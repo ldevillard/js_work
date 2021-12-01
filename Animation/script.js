@@ -9,7 +9,7 @@ let mouse =
 {
     x: null,
     y: null,
-    radius: (canvas.height/100) * (canvas.width/100)
+    radius: (canvas.height/80) * (canvas.width/80)
 }
 
 window.addEventListener('mousemove', 
@@ -91,6 +91,31 @@ function init()
     }
 }
 
+function connect()
+{
+    let opacityValue = 1;
+
+    for (let a = 0; a < particlesArray.length; a++)
+    {
+        for (let b = a; b < particlesArray.length; b++)
+        {
+            let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) 
+            + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+
+            if (distance < (canvas.width/7) * (canvas.height/7))
+            {
+                opacityValue = 1 - (distance / 30000);
+                ctx.strokeStyle = 'rgba(255,255,255,'+ opacityValue +')';
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                ctx.stroke();
+            }
+        }
+    }
+}
+
 //animation loop
 function animate()
 {
@@ -99,7 +124,26 @@ function animate()
 
     for (let i = 0; i < particlesArray.length; i++)
         particlesArray[i].update();
+    connect();
 }
+
+window.addEventListener('resize',
+    function()
+    {
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+        mouse.radius = (canvas.height/80) * (canvas.width/80);
+        init();
+    }
+)
+
+window.addEventListener('mouseout',
+    function()
+    {
+        mouse.x = undefined;
+        mouse.y = undefined;
+    }
+)
 
 init();
 animate();
