@@ -3,6 +3,7 @@ const button = document.getElementById("button1");
 button.addEventListener("click",
     function()
     {
+        window.open("page2.html", "_self");
         console.log("button clicked!");
     }
 )
