@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap');
 
-
 *
 {
     margin: 0;
@@ -60,4 +59,98 @@ body
     font-weight: bold;
     font-size: 100px;
     color : white;
+}
+
+.button
+{
+
+    z-index: 1;
+    color: black;
+    font-size: 40px;
+    width: 200px;
+    height: 60px;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    font-family: 'Outfit', sans-serif;
+    border-radius: 30px;
+    border: none;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.check-box
+{
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    right: 100%;
+    opacity: 0;
+}
+
+.check-box svg
+{
+}
+
+svg path
+{
+    stroke-width: 3;
+    stroke: white;
+    stroke-dasharray: 34;
+    stroke-dashoffset: 34;
+    stroke-linecap: round;
+}
+
+.active
+{
+    background: salmon;
+    transition: 1s;
+}
+
+.active .check-box
+{
+    right: 0%;
+    opacity: 1;
+    transition: 1s;
+}
+
+.active .text
+{
+    margin-right: 60px;
+    transition: 1s;
+}
+
+.active svg path
+{
+    stroke-dashoffset: 0;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+.disactive
+{
+    background: white;
+    transition: 1s;
+}
+
+.disactive .check-box
+{
+    right: 100%;
+    opacity: 0;
+    transition: 1s;
+}
+
+.disactive .text
+{
+    margin-right: 0px;
+    transition: 1s;
+}
+
+.disactive svg path
+{
+    stroke-dashoffset: 34;
+    transition: 0.5s;
 }
